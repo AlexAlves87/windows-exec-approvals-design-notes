@@ -66,6 +66,14 @@ The two models are conceptually incompatible and cannot be merged:
 
 ---
 
+## Intended Use
+
+This material is background design work, not a drop-in implementation. It is intended to be used incrementally: introduce a stable, inert routing seam first; add validation, resolution, and evaluation as isolated, independently-testable components; wire the coordinator behind an explicit activation point that defaults to off; and leave gateway integration and the settings UI for a later phase. Each step builds on the last and leaves the existing approval path untouched throughout.
+
+The incremental plan in `incremental-plan.md` reflects this dependency ordering directly. The intent is that each step can be reviewed and verified on its own before the next begins.
+
+---
+
 ## How to Read This
 
 Start with `architecture-overview.md` for the overall model and invariants. Read `incremental-plan.md` to understand the dependency structure and what each phase unlocks. Read `decisions.md` for the reasoning behind non-obvious choices. The `design-details/` directory contains subsystem-level notes that go deeper than the overview documents.
